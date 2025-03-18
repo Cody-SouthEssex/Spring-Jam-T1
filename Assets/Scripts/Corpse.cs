@@ -10,7 +10,6 @@ public class Corpse : MonoBehaviour
     private Rigidbody rb;
     [HideInInspector] public Vector3 force;
     public float stunDuration;
-    public float lifeTime;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +17,6 @@ public class Corpse : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         StartCoroutine(StartStun());
-
-        Destroy(gameObject, lifeTime);
     }
 
     private IEnumerator StartStun()
