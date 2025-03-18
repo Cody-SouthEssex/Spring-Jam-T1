@@ -5008,7 +5008,7 @@ GameObject:
   - component: {fileID: 1654672977392956335}
   - component: {fileID: 3701382307988030495}
   m_Layer: 0
-  m_Name: PixieFlare 1
+  m_Name: GoblinSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5045,7 +5045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 0}
-  onHitEffect: {fileID: 4134863507944938162, guid: ddd50c299b2e08b46807fcb3720d41a6,
+  onHitEffect: {fileID: 4134863507944938162, guid: ae14bec984cbd2e4bb3871ef56c9a09f,
     type: 3}
   speed: 10
   radius: 0.2
@@ -5053,7 +5053,6 @@ MonoBehaviour:
   hitRadius: 1.5
   rotationBase: 0
   rotationAccel: 0
-  lifeTime: 100
   knockbackDampen: 2
 --- !u!114 &3701382307988030495
 MonoBehaviour:
