@@ -57,16 +57,16 @@ public class PrincessCutscene : MonoBehaviour
             case 0:
                 playerMovement.lockMovement = true;
                 player.position = playerProposePosition.position;
-                CreateDialogue(player, heroTextAsset);
+                CreateDialogue(player, heroTextAsset, 0.5f);
                 break;
             case 1:
-                CreateDialogue(princess, princessTextAsset);
+                CreateDialogue(princess, princessTextAsset, 1f);
                 cameraHandler.focus = princess;
                 break;
         };
     }
 
-    public void CreateDialogue(Transform target, TextAsset textAsset)
+    public void CreateDialogue(Transform target, TextAsset textAsset, float pitch)
     {
         if (currentDialogue)
         {
@@ -78,6 +78,7 @@ public class PrincessCutscene : MonoBehaviour
         {
             dialogueScript.textAsset = textAsset;
             currentDialogue = dialogueScript;
+            newDialogue.GetComponent<AudioSource>().pitch = pitch;
         }
     }
 

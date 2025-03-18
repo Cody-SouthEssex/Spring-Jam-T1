@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    public Slider slider;
+    public SoundSystem soundSystem_footsteps;
     private InputHandler ih;
     private Rigidbody rb;
     private Health health;
@@ -36,10 +39,14 @@ public class PlayerMovement : MonoBehaviour
         ih = FindObjectOfType<InputHandler>();
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
+
+        slider.maxValue = health.maxHealth;
     }
 
     private void Update()
     {
+        slider.value = health.currentHealth;
+
         if (lockMovement)
         {
             rb.velocity = Vector3.zero;
@@ -104,6 +111,10 @@ public class PlayerMovement : MonoBehaviour
     {
         SetVelocityXZ(inputDirection.normalized * moveSpeed * Time.deltaTime);
 
+        if(inputDirection.magnitude > 0)
+        {
+            soundSystem_footsteps.PlaySound();
+        }
 
         //ApplyGravity();
     }

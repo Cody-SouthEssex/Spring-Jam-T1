@@ -231,7 +231,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 3821990366599523780, guid: b5d44669f94367c4ea640af3394b2dc6, type: 3}
   - {fileID: 4000213273217819893, guid: 7b4e9111052d4dd4bb4796f362d75661, type: 3}
-  - {fileID: 5933544334643589183, guid: afe7205751879d64eb2bc1141f935e03, type: 3}
+  - {fileID: 2504123659091244704, guid: 4626714141c225f45a951b513fb0ec2f, type: 3}
   spawnPointsParent: {fileID: 1687454536320935816}
   enemyParent: {fileID: 791414371963902215}
   spawnDelay: 1
