@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
     /// </summary>
     public void ChangeHealth(float value)
     {
-        if (!isStunned)
+        if (!isStunned && !isInvincible)
         {
             currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
 

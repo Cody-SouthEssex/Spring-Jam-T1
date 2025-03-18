@@ -19,16 +19,12 @@ public class Projectile : MonoBehaviour
     public float rotationBase = 0;
     public float rotationAccel = 0;
 
-    public float lifeTime;
-
     public float knockbackDampen = 2;
 
     // Start is called before the first frame update
     void Start()
     {
         entityData = GetComponent<EntityData>();
-
-        Destroy(gameObject, lifeTime);
     }
 
     // Update is called once per frame

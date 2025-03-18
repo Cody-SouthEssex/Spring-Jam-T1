@@ -24,6 +24,12 @@ public class ProceduralGen : MonoBehaviour
     {
         Destroy(currentRoom);
 
+        Debris[] debris = FindObjectsOfType<Debris>();
+        foreach (Debris obj in debris)
+        {
+            Destroy(obj.gameObject);
+        }
+
         // Spawn Room
         currentRoom = Instantiate(rooms[Random.Range(0, rooms.Length)], Vector3.zero, Quaternion.identity, transform);
         if(currentRoom.TryGetComponent(out Room room))

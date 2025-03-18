@@ -234,6 +234,9 @@ MonoBehaviour:
   - {fileID: 5933544334643589183, guid: afe7205751879d64eb2bc1141f935e03, type: 3}
   spawnPointsParent: {fileID: 1687454536320935816}
   enemyParent: {fileID: 791414371963902215}
+  spawnDelay: 1
+  spawnWarning: {fileID: 2930781861900082071, guid: f60fb1e81a8e1be4486c4c0764cb94ab,
+    type: 3}
 --- !u!1 &6040973230966670155
 GameObject:
   m_ObjectHideFlags: 0
