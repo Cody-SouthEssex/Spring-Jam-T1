@@ -1,20 +1,13 @@
+// Jake
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public enum Team
-{
-    Player,
-    Enemy,
-}
-
 [RequireComponent(typeof(Collider))]
 public class Health : MonoBehaviour
 {
-    [Header("Player")]
-    public bool isPlayer;
-
     [Header("Health")]
     public float currentHealth;
     public float maxHealth = 1;
@@ -25,6 +18,8 @@ public class Health : MonoBehaviour
     public DeathEvent OnDeath;
 
     public bool isAlive = true;
+    public bool isInvincible = false;
+    public bool isGodMode = false;
 
     [Header("Stun")]
     public bool isStunned;
@@ -43,7 +38,12 @@ public class Health : MonoBehaviour
     private void Start()
     {
         mr = GetComponent<MeshRenderer>();
-        defaultMaterial = mr.material;
+        if (mr)
+        {
+            defaultMaterial = mr.material;
+        }
+
+        SetInvincibility(false);
     }
 
     /// <summary>
@@ -71,7 +71,7 @@ public class Health : MonoBehaviour
     }
     public void ChangeHealth(float value, Vector3 force)
     {
-        if (!isStunned)
+        if (!isStunned && !isInvincible)
         {
             currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
 
@@ -102,12 +102,6 @@ public class Health : MonoBehaviour
             isAlive = false;
             OnDeath?.Invoke();
             SpawnCorpse();
-
-            if (isPlayer)
-            {
-                // Pause
-                Time.timeScale = 0;
-            }
         }
     }
 
@@ -130,9 +124,27 @@ public class Health : MonoBehaviour
     private IEnumerator HitStun()
     {
         isStunned = true;
-        mr.material = hitFlashMaterial;
+        if (mr)
+        {
+            mr.material = hitFlashMaterial;
+        }
         yield return new WaitForSeconds(stunDuration);
         isStunned = false;
-        mr.material = defaultMaterial;
+        if (mr)
+        {
+            mr.material = defaultMaterial;
+        }
+    }
+
+    public void SetInvincibility(bool isInvincible)
+    {
+        if(isGodMode)
+        {
+            this.isInvincible = true;
+        }
+        else
+        {
+            this.isInvincible = isInvincible;
+        }
     }
 }
