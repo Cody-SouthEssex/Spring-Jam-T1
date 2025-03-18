@@ -1036,6 +1036,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3134199479149840687, guid: d93c6a852de33ec4babba54d28c18cdb,
+        type: 3}
+      propertyPath: isGodMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134199479149840687, guid: d93c6a852de33ec4babba54d28c18cdb,
+        type: 3}
+      propertyPath: isInvincible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4435382574720183747, guid: d93c6a852de33ec4babba54d28c18cdb,
         type: 3}
       propertyPath: m_Name
