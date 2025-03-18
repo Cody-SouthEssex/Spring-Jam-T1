@@ -9,6 +9,7 @@ public class PauseController : MonoBehaviour
     private GameOverController gameOverController;
     public GameObject pauseMenuUI;
     public string mainMenuSceneName = "MainMenu";
+    public string gamePlaySceneName = "Gameplay";
     private bool isPaused = false;
 
     private void Start()
@@ -19,15 +20,19 @@ public class PauseController : MonoBehaviour
 
     void Update()
     {
-        if (ih.GetInput(Control.Escape, KeyPressType.Down))
+        if (!gameOverController.isGameOver)
         {
-            if (isPaused && !gameOverController.isGameOver)
+            if (ih.GetInput(Control.Escape, KeyPressType.Down))
             {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
+                if (isPaused)
+                {
+                    ResumeGame();
+                }
+
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
@@ -50,6 +55,10 @@ public class PauseController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(gamePlaySceneName);
     }
 
     public void ExitGame()
