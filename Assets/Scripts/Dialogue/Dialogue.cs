@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
+    private SoundSystem soundSystem;
     private Animator animator;
     public Transform baseObj;
     public Text textUI;
@@ -26,6 +27,8 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        soundSystem = GetComponent<SoundSystem>();
+
         animator = GetComponent<Animator>();
 
         inputHandler = FindObjectOfType<InputHandler>();
@@ -51,6 +54,7 @@ public class Dialogue : MonoBehaviour
                 {
                     charIndex += 1;
                     charTimer.Start();
+                    soundSystem.PlaySound();
                 }
             }
 

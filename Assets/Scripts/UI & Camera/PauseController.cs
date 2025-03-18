@@ -16,6 +16,8 @@ public class PauseController : MonoBehaviour
     {
         ih = FindObjectOfType<InputHandler>();
         gameOverController = GetComponent<GameOverController>();
+
+        ResumeGame();
     }
 
     void Update()
