@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Health health;
 
+    public bool lockMovement;
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
 
@@ -38,15 +40,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!isRolling)
+        if (lockMovement)
         {
-            GetInputDirection();
-            //HandleJumping();
+            rb.velocity = Vector3.zero;
+            inputDirection = Vector3.zero;
         }
-
-        if (ih.GetInput(Control.Dodge, KeyPressType.Down) && canRoll && !isRolling) // && controller.isGrounded)
+        else
         {
-            StartCoroutine(DodgeRoll());
+            if (!isRolling)
+            {
+                GetInputDirection();
+                //HandleJumping();
+            }
+
+            if (ih.GetInput(Control.Dodge, KeyPressType.Down) && canRoll && !isRolling) // && controller.isGrounded)
+            {
+                StartCoroutine(DodgeRoll());
+            }
         }
     }
 

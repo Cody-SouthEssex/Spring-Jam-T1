@@ -545,10 +545,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fa1c57fee2f11458e091adc4a7bd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms:
+  battleRooms:
   - {fileID: 6278420208351256091, guid: 4c811a22c1a02cb4f970c9e784a9f52e, type: 3}
   - {fileID: 5494816202741189196, guid: 2de8edf2fe5e2cf49ada48787fb0483a, type: 3}
+  eventRooms:
+  - {fileID: 6278420208351256091, guid: 8465f362790b05a4db2dfae0fe7a8b66, type: 3}
+  eventIndexes: 0400000008000000
+  princessIndex: 12
+  princessRoom: {fileID: 6278420208351256091, guid: 7faddc38f34c83e4fb528425da10a53e,
+    type: 3}
   currentRoom: {fileID: 1674665709}
+  currentIndex: 0
   player: {fileID: 0}
 --- !u!4 &965042855
 Transform:
@@ -693,7 +700,7 @@ PrefabInstance:
     - target: {fileID: 3899138847366521177, guid: 401d3bd32d3685949b53ef80f944e0f6,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 778
+      value: 781
       objectReference: {fileID: 0}
     - target: {fileID: 3899138847366521177, guid: 401d3bd32d3685949b53ef80f944e0f6,
         type: 3}
