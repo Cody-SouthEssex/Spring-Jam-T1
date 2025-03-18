@@ -5047,7 +5047,7 @@ MonoBehaviour:
   entityData: {fileID: 0}
   onHitEffect: {fileID: 4134863507944938162, guid: ae14bec984cbd2e4bb3871ef56c9a09f,
     type: 3}
-  speed: 10
+  speed: 7.5
   radius: 0.2
   damage: 2
   hitRadius: 1.5
