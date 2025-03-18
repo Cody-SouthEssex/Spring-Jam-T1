@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
+    public GameObject player;
     public Transform focus;
     public float lookSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        focus = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player)
+        {
+            focus = player.transform;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, focus.position, Time.deltaTime * lookSpeed);
+        if (focus)
+        {
+            transform.position = Vector3.Lerp(transform.position, focus.position, Time.deltaTime * lookSpeed);
+        }
     }
 }

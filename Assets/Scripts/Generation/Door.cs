@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    private Animator animator;
     private InputHandler ih;
 
     private ProceduralGen pg;
@@ -17,6 +18,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         ih = FindObjectOfType<InputHandler>();
         pg = GetComponentInParent<ProceduralGen>();
         player = pg.player;
@@ -25,6 +27,8 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isOpen", !locked && !wasEntered);
+
         EnterDoor();
     }
 
