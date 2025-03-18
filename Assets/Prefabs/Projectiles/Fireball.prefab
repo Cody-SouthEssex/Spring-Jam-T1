@@ -5007,6 +5007,7 @@ GameObject:
   - component: {fileID: 8560700232596921960}
   - component: {fileID: 1654672977392956335}
   - component: {fileID: 3701382307988030495}
+  - component: {fileID: -2030634590232516698}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -5051,6 +5052,8 @@ MonoBehaviour:
   radius: 0.2
   damage: 2
   hitRadius: 1.5
+  rotationBase: 0
+  rotationAccel: 0
   lifeTime: 100
   knockbackDampen: 2
 --- !u!114 &3701382307988030495
@@ -5066,3 +5069,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+--- !u!114 &-2030634590232516698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522826032750814570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496de042bf4da7340a2ec1cc60f36cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime:
+    startTime: 0
+    endTime: 0
+    duration: 100
+    isComplete: 0
+  shrinkSpeed: 4
+  doShrink: 0
