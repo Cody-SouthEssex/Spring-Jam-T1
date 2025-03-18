@@ -10,6 +10,7 @@ public enum Control
     Interact,
     Primary,
     Jump,
+    SkipDialogue,
 }
 
 public enum KeyPressType
@@ -42,7 +43,8 @@ public class InputHandler : MonoBehaviour
         new ControlKeycode(Control.Escape, KeyCode.Escape),
         new ControlKeycode(Control.Interact, KeyCode.E),
         new ControlKeycode(Control.Primary, KeyCode.Mouse0),
-        new ControlKeycode(Control.Jump, KeyCode.Q)
+        new ControlKeycode(Control.Jump, KeyCode.Q),
+        new ControlKeycode(Control.SkipDialogue, KeyCode.Z)
     };
     private List<ControlKeycode> defaultKeybinds = new List<ControlKeycode>
     {
@@ -54,7 +56,8 @@ public class InputHandler : MonoBehaviour
         new ControlKeycode(Control.Escape, KeyCode.Escape),
         new ControlKeycode(Control.Interact, KeyCode.E),
         new ControlKeycode(Control.Primary, KeyCode.Mouse0),
-        new ControlKeycode(Control.Jump, KeyCode.Q)
+        new ControlKeycode(Control.Jump, KeyCode.Q),
+        new ControlKeycode(Control.SkipDialogue, KeyCode.Z)
     };
 
     public Dictionary<Control, KeyCode> keybindDictionary = new Dictionary<Control, KeyCode>();
