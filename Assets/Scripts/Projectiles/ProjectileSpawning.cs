@@ -14,7 +14,9 @@ public class ProjectileSpawning : MonoBehaviour
     public float burstDelay;
     public int arcCount;
     public float arcSpread;
-    public float arcOffset;
+    public float arcOffsetBase;
+    private float arcOffset;
+    public float arcOffsetChange;
 
 
     private void Start()
@@ -29,6 +31,7 @@ public class ProjectileSpawning : MonoBehaviour
 
     private IEnumerator Burst()
     {
+        arcOffset = arcOffsetBase;
         for (int i = 0; i < burstCount; i++)
         {
             for(int j = 0; j < arcCount; j++)
@@ -36,6 +39,7 @@ public class ProjectileSpawning : MonoBehaviour
                 SpawnProjectile(new Vector3(0, arcOffset + (j - arcCount / 2f) * arcSpread, 0));
             }
             yield return new WaitForSeconds(burstDelay);
+            arcOffset += arcOffsetChange;
         }
     }
 
